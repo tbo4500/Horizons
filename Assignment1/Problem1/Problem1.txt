@@ -1,0 +1,22 @@
+===如何搭建Python环境(以Windows为例)
+1. 安装Python
+要求的Python版本是2.7.3，下载地址https://www.python.org/ftp/python/2.7.3/python-2.7.3.msi
+安装选项建议都用默认值
+安装后建议把"C:\Python27\"加到Windows的PATH环境变量中
+2. 安装oauth2
+先下载pip，下载地址https://bootstrap.pypa.io/get-pip.py
+命令行运行: python get-pip.py
+命令行运行: c:\Python27\Scripts\pip.exe install oauth2
+
+===注意有坑
+坑1: 如果在公司或通过公司VPN运行get-pip.py，需要设置网络代理，具体做法:
+    在Windows的环境变量中添加:
+		 http_proxy=ctu-net-proxy01.ubisoft.org:3128
+		https_proxy=ctu-net-proxy01.ubisoft.org:3128
+坑2: 如果在公司或通过公司VPN运行twitterstream.py，需要设置网络代理，具体做法:
+	把twitterstream.py中的这一行
+        opener = urllib.OpenerDirector()
+	替换成这三行
+        proxy_handler = urllib.ProxyHandler({"https" : 'https://ctu-net-proxy01.ubisoft.org:3128'})
+        opener = urllib.build_opener(proxy_handler)
+        urllib.install_opener(opener)

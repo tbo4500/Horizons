@@ -1,0 +1,3 @@
+===代码片段
+example6-1.py: 输出数组前n项
+example6-2.py: 从一条tweet中读取hashtags

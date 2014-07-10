@@ -1,0 +1,16 @@
+===代码片段
+example2-1.py: 遍历文件中的每一行
+example2-2.py: 从一条tweet中读取text
+example2-3.py: 判断一个字典中有没有某个键
+example2-4.py: 去掉字符串中的换行符
+example2-5.py: 支持Unicode字符串
+example2-6.py: 从一句话中分解出单词
+
+===注意有坑
+坑1: 提交文件前需要把tweet_sentiment.py中的这三行代码删掉
+    hw()
+    lines(sent_file)
+    lines(tweet_file)
+坑2: output.txt中的数据有可能没有需要的键
+坑3: output.txt中的数据有可能包含换行符(\n)
+坑4: output.txt中的数据有可能是Unicode的
